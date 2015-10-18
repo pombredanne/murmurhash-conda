@@ -17,8 +17,6 @@ build:
 requirements:
   build:
     - python
-    - setuptools
-    - jinja2
 
   run:
     - python

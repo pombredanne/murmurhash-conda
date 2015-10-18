@@ -28,5 +28,5 @@ test:
     - murmurhash
 
 about:
-  home: https://github.com/syllog1sm/murmurhash
+  home: https://github.com/syllog1sm/cython-murmurhash
   summary: 'Cython bindings for murmurhash'

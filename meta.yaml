@@ -7,7 +7,6 @@ source:
   url: https://pypi.python.org/packages/source/m/murmurhash/murmurhash-0.24.tar.gz
   md5: 182d31e0c4aa34fdf0d57a78f7249108
   patches:
-    - setup.py.patch
     - MurmurHash2.h.patch
     - MurmurHash3.h.patch           
 

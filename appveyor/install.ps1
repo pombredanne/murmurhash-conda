@@ -4,6 +4,8 @@
 #
 # Added: stdint.h download for Python 2.x
 
+param ([switch]$python = $false, [switch]$miniconda = $false, [switch]$pip = $false, [switch]$stdint = $false)
+
 $MINICONDA_URL = "http://repo.continuum.io/miniconda/"
 $BASE_URL = "https://www.python.org/ftp/python/"
 $GET_PIP_URL = "https://bootstrap.pypa.io/get-pip.py"
@@ -19,7 +21,7 @@ $PYTHON_PRERELEASE_REGEX = @"
 \.
 (?<micro>\d+)
 (?<prerelease>[a-z]{1,2}\d+)
-"@
+"@                                          
 
 $PYTHON_LATEST_REGEX = @"
 (?x)
@@ -246,14 +248,23 @@ function InstallStdintH ($python_version) {
     }
 }
 
-
-function main ([string]$type = "python") {
-    if ($type -eq "miniconda") {
-        InstallMiniconda $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
-    } else {
-        InstallPython $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
+     
+if ($miniconda) {
+    InstallMiniconda $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
+    if ($pip) {
+        InstallMinicondaPip $env:PYTHON
     }
-    InstallStdintH $env:PYTHON_VERSION
+    if ($stdint) {
+       InstallStdintH $env:PYTHON_VERSION
+    }
+}
+if ($python) {
+    InstallPython $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
+    if ($pip) {
+        InstallPip $env:PYTHON
+    }
+    if ($stdint) {
+       InstallStdintH $env:PYTHON_VERSION
+    }
 }
 
-main

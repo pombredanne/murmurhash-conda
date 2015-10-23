@@ -28,7 +28,7 @@ environment:
 
 install:
   # Install miniconda 
-  - ps: appveyor\install.ps1 miniconda 
+  - ps: appveyor\install.ps1 -miniconda -stdint 
 
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
@@ -38,8 +38,8 @@ install:
 
   # Upgrade to the latest version of conda and install dependencies to build and upload packages
   - conda config --set always_yes yes --set changeps1 no
-  # Install the build prerequisites
-  - conda install -q conda-build anaconda-client	
+  # Install the build and test prerequisites
+  - conda install -q conda-build anaconda-client pytest	
 
 build_script:                                                                                   
   # Check that we have the expected version and architecture for conda

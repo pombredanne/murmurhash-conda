@@ -230,7 +230,7 @@ function InstallMinicondaPip ($python_home) {
     } else {
         Write-Host "pip already installed."
     }
-}
+}                                                                                                                
 
 function InstallStdintH ($python_version) {
     $major, $minor, $micro, $prerelease = ParsePythonVersion $python_version
@@ -247,8 +247,12 @@ function InstallStdintH ($python_version) {
 }
 
 
-function main () {
-    InstallMiniconda $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
+function main ([string]$type = "python") {
+    if ($type -eq "miniconda") {
+        InstallMiniconda $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
+    } else {
+        InstallPython $env:PYTHON_VERSION $env:PYTHON_ARCH $env:PYTHON
+    }
     InstallStdintH $env:PYTHON_VERSION
 }
 

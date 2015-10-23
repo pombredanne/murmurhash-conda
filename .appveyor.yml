@@ -37,13 +37,13 @@ install:
   - "SET PYTHONPATH=%CD%;%PYTHONPATH%"
 
   # Upgrade to the latest version of conda and install dependencies to build and upload packages
-  - "conda config --set always_yes yes --set changeps1 no"
+  - conda config --set always_yes yes --set changeps1 no
   # Install the build prerequisites
-  - "conda install -q conda-build anaconda-client"	
+  - conda install -q conda-build anaconda-client	
 
 build_script:                                                                                   
-  # Check that we have the expected version and architecture for Python
-  - "conda info -a"
+  # Check that we have the expected version and architecture for conda
+  - conda info -a
   # Build
   - "%CMD_IN_ENV% conda build -q ."
 

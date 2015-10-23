@@ -21,10 +21,8 @@ requirements:
     - python
 
 test:
-  requires:
-    - pytest
-  commands:
-    - py.test /tests
+  imports:
+    - murmurhash
 
 about:
   home: https://github.com/syllog1sm/cython-murmurhash

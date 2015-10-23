@@ -33,7 +33,7 @@ install:
   # Prepend newly installed Python to the PATH of this build (this cannot be
   # done from inside the powershell script as it would require to restart
   # the parent CMD process)
-  - SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
+  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
 
   # Upgrade to the latest version of conda and install dependencies to build and upload packages
   - conda config --set always_yes yes --set changeps1 no
@@ -44,8 +44,8 @@ build_script:
   # Check that we have the expected version and architecture for conda
   - conda info -a
   # Build
-  - %CMD_IN_ENV% conda build -q --python %PYTHON_VERSION% --no-anaconda-upload .
+  - "%CMD_IN_ENV% conda build -q --python %PYTHON_VERSION% --no-anaconda-upload ."
 
 on_success:
-  - for /f %%i in ('conda build -q --python %PYTHON_VERSION% --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%i
+  - "for /f %%i in ('conda build -q --python %PYTHON_VERSION% --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%i"
 

@@ -21,7 +21,10 @@ requirements:
     - python
 
 test:
-  py.test \tests
+  requires:
+    - pytest
+  commands:
+    - py.test \tests
 
 about:
   home: https://github.com/syllog1sm/cython-murmurhash

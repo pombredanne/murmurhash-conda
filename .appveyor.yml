@@ -34,7 +34,6 @@ install:
   # done from inside the powershell script as it would require to restart
   # the parent CMD process)
   - "SET PATH=%CD%;%PYTHON%;%PYTHON%\\Scripts;%PATH%"
-  #- "SET PYTHONPATH=%CD%;%PYTHONPATH%"
 
   # Upgrade to the latest version of conda and install dependencies to build and upload packages
   - conda config --set always_yes yes --set changeps1 no

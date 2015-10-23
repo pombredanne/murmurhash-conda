@@ -24,7 +24,7 @@ test:
   requires:
     - pytest
   commands:
-    - py.test \tests
+    - py.test /tests
 
 about:
   home: https://github.com/syllog1sm/cython-murmurhash

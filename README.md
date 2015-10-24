@@ -3,10 +3,12 @@ This is a project to create conda package for https://github.com/syllog1sm/cytho
 Linux64 build status 
 
 
-![Travis CI](https://travis-ci.org/maxirmx/murmurhash-conda.svg?branch=master)
+![Travis CI](https://travis-ci.org/henningpeters/murmurhash-conda.svg?branch=master)
 
 Win64/32 build status
 
 
 [![Build status](https://ci.appveyor.com/api/projects/status/i730t9vwhryu2x5u?svg=true)](https://ci.appveyor.com/project/maxirmx/murmurhash-conda)
-                      
+
+
+Conda packages: https://anaconda.org/spacy/murmurhash

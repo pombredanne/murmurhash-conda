@@ -26,4 +26,5 @@ test:
 
 about:
   home: https://github.com/syllog1sm/cython-murmurhash
+  license: MIT
   summary: 'Cython bindings for murmurhash'

@@ -49,5 +49,5 @@ build_script:
   - "%CMD_IN_ENV% conda build -q --no-anaconda-upload ."
 
 on_success:
-  - "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u maxirmx --force --no-progress %%f"
+  - "for /f %%f in ('conda build -q --output .') do anaconda -t %ANACONDA_TOKEN% upload -u spacy --force --no-progress %%f"
 

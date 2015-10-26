@@ -1,14 +1,14 @@
 This is a project to create conda package for https://github.com/syllog1sm/cython-murmurhash
 
-Linux64 build status 
+Linux64/OSX build status 
 
 
-![Travis CI](https://travis-ci.org/henningpeters/murmurhash-conda.svg?branch=master)
+[![Travis CI](https://travis-ci.org/henningpeters/murmurhash-conda.svg?branch=master)](https://travis-ci.org/henningpeters/murmurhash-conda.svg)
 
 Win64/32 build status
 
 
-[![Build status](https://ci.appveyor.com/api/projects/status/i730t9vwhryu2x5u?svg=true)](https://ci.appveyor.com/project/maxirmx/murmurhash-conda)
+[![Appveyor CI](https://ci.appveyor.com/api/projects/status/u2flcfqs2aljjka0?svg=true)](https://ci.appveyor.com/project/henningpeters/murmurhash-conda)
 
 
 Conda packages: https://anaconda.org/spacy/murmurhash
